@@ -1,0 +1,12 @@
+<section>
+    <div>
+        <mat-icon (click)="onNoClick()" aria-hidden="false" aria-label="close icon">close</mat-icon>
+    </div>
+    <h1 mat-dialog-title>{{ data.title }}</h1>
+    <div mat-dialog-content>
+        <!-- Want to display html elements from app-modal -->
+    </div>
+    <div mat-dialog-actions>
+        <button mat-button (click)="onNoClick()">{{ data.text ? data.text : 'Ok' }}</button>
+    </div>
+</section>
