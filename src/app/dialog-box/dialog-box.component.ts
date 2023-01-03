@@ -1,11 +1,4 @@
-import {
-  ChangeDetectorRef,
-  Component,
-  Inject,
-  Input,
-  TemplateRef,
-  ViewChild,
-} from '@angular/core';
+import { Component, Inject, Input, TemplateRef } from '@angular/core';
 import {
   MatDialog,
   MatDialogRef,
@@ -29,12 +22,12 @@ export class DialogBoxComponent {
   @Input() modalTitle!: string;
   @Input() okText!: string;
   @Input() name!: string;
-  @ViewChild('template') template!: TemplateRef<any>;
+  @Input() template!: TemplateRef<any>;
 
-  constructor(public dialog: MatDialog, public cdr: ChangeDetectorRef) {}
+  constructor(public dialog: MatDialog) {}
 
-  ngAfterViewInit() {
-    this.cdr.detectChanges();
+  ngOnInit(): void {
+    console.log(this.template);
   }
 
   openDialog(): void {
@@ -53,6 +46,7 @@ export class DialogBoxComponent {
 @Component({
   selector: 'modal-dialog',
   templateUrl: './modal-dialog.component.html',
+  styleUrls: ['./modal-dialog.component.css'],
 })
 export class ModalDialogComponent {
   constructor(

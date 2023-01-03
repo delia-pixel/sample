@@ -1,15 +1,15 @@
 <!-- <app-data-table
   [tableData]="customers"
   [tableColumns]="customerTableColumns"
-  [isFilterable]="true"
-  [isPageable]="true"
-  [paginationSizes]="[2, 4, 6]"
-  [defaultPageSize]="4"
+   [isFilterable]="true"
+    [isPageable]="true"
+              [paginationSizes]="[2,4,6]"
+              [defaultPageSize]="4"
 ></app-data-table> -->
 
-<app-dialog-box [title]="title" [btnText]="text">
-  <section #template>
-    <h3>Develop across all platforms</h3>
+<app-dialog-box [template]="template" [title]="title" [btnText]="text">
+  <ng-template #template>
+    <!-- <h3>Develop across all platforms</h3>
     <p>
       Learn one way to build applications with Angular and reuse your code and
       abilities to build apps for any deployment target. For web, mobile web,
@@ -101,6 +101,23 @@
       Angular provides the Router service to help you define navigation paths
       among views. The router provides sophisticated in-browser navigational
       capabilities.
-    </p>
-  </section>
+    </p> -->
+    <div class="container">
+      <mat-form-field appearance="fill">
+        <mat-label>Input</mat-label>
+        <input matInput />
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Select</mat-label>
+        <mat-select>
+          <mat-option value="one">First option</mat-option>
+          <mat-option value="two">Second option</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Textarea</mat-label>
+        <textarea matInput></textarea>
+      </mat-form-field>
+    </div>
+  </ng-template>
 </app-dialog-box>
