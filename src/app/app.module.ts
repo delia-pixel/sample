@@ -12,7 +12,6 @@ import { TransactionsModule } from './transactions/transactions/transactions.mod
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-
     TransactionsModule,
   ],
   providers: [],

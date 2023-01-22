@@ -1,0 +1,53 @@
+.form-section{
+    width: 300px;
+    min-width: 200px;
+}
+
+.errorMessage {
+    color: red;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.input{
+    width: 100%;
+    min-width: fit-content;
+    border: none;
+    outline: none;
+    background-color: #ebe3e3;
+    padding: 15px;
+    border-radius: 3px;
+    box-sizing: border-box;
+    margin: 8px auto;
+}
+
+
+textarea{
+    width: 100%;
+    height: 60px;
+    background-color: #ebe3e3;
+    border-radius: 5px;
+    margin: 8px auto;
+    box-sizing: border-box;
+    outline: none;
+    border: #ebe3e3;
+}
+
+select{
+    width: 100%;
+    outline: none;
+    padding: 10px;
+    border: none;
+}
+
+@media screen  and (max-width:425px){
+    
+
+        .form-section{
+            width: 220px;
+        }
+}

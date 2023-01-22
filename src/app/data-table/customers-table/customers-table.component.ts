@@ -1,4 +1,10 @@
 import { Component } from '@angular/core';
+import { FormInputBase } from 'src/app/dynamic-form/model/input-base';
+import { FormInputCheckBox } from 'src/app/dynamic-form/model/input-checkbox';
+import { FormInputDropdown } from 'src/app/dynamic-form/model/input-dropdown';
+import { FormInputNumber } from 'src/app/dynamic-form/model/input-number';
+import { FormInputText } from 'src/app/dynamic-form/model/input-text';
+import { FormInputTextarea } from 'src/app/dynamic-form/model/input-textarea';
 import { TableColumn } from '../table-column';
 
 @Component({
@@ -81,6 +87,56 @@ export class CustomersTableComponent {
         dataKey: 'age',
       },
     ];
+  }
+
+  myForm: FormInputBase<string | boolean>[] = [
+    new FormInputText({
+      key: 'title',
+      label: 'Title',
+      type: 'text',
+      required: true,
+    }),
+
+    new FormInputText({
+      key: 'name',
+      label: 'Name',
+      type: 'text',
+      required: true,
+    }),
+
+    new FormInputTextarea({
+      key: 'txt',
+      label: 'Paragraph',
+      type: 'textarea',
+      required: true,
+      value:
+        'At w3schools.com you will learn how to make a website. They offer free tutorials in all web development technologies.',
+    }),
+
+    new FormInputDropdown({
+      key: 'animal',
+      label: 'Favorite animal',
+      options: [
+        { key: 'cat', value: 'Cat' },
+        { key: 'dog', value: 'Dog' },
+      ],
+    }),
+
+    new FormInputCheckBox({
+      key: 'readAgreement',
+      label: 'Read agreement?',
+      required: true,
+    }),
+
+    new FormInputNumber({
+      key: 'qty',
+      label: 'Number of attemps',
+      required: false,
+    }),
+  ];
+
+  emittedData($event: any) {
+    console.log($event);
   }
 }
 

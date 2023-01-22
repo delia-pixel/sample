@@ -102,7 +102,9 @@
       among views. The router provides sophisticated in-browser navigational
       capabilities.
     </p> -->
-    <div class="container">
+
+
+    <!-- <div class="container">
       <mat-form-field appearance="fill">
         <mat-label>Input</mat-label>
         <input matInput />
@@ -118,6 +120,14 @@
         <mat-label>Textarea</mat-label>
         <textarea matInput></textarea>
       </mat-form-field>
-    </div>
+    </div> -->
+
+    <div>
+  <h2>My dynamic form</h2>
+  <app-dynamic-form
+    [formFields]="myForm"
+    (formValueEmitter)="emittedData($event)"
+  ></app-dynamic-form>
+</div>
   </ng-template>
 </app-dialog-box>
